@@ -19,7 +19,7 @@ include_recipe "#{cookbook_name}::centos-chef_user"
 #
 # @note This command is not idempotent. A better command may exist within the yum cookbook.
 #
-execute "yum update -y"
+execute 'yum makecache'
 
 needed_packages_for_attendees = %w[ vim nano emacs ]
 package needed_packages_for_attendees
